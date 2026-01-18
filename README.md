@@ -1,28 +1,38 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <title>GoodCard – Vale-Combustível</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-    body{font-family:Arial,Helvetica,sans-serif;background:#f5f5f5;margin:0;padding:20px;text-align:center}
-    .box{background:#fff;max-width:320px;margin:auto;padding:30px 20px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
-    img.logo{height:40px;margin-bottom:15px}
-    h2{color:#003d75;font-size:20px;margin:00 10px}
-    p{font-size:14px;color:#555;margin:0 0 20px}
-    .btn{display:inline-block;background:#003d75;color:#fff;padding:12px 0;width:100%;border:0;border-radius:4px;font-size:16px;text-decoration:none}
-    small{display:block;margin-top:15px;font-size:11px;color:#888}
-  </style>
+<meta charset="utf-8">
+<title>GoodCard – Cartão Combustível Aprovado</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{font-family:Arial;background:#f3f3f3;text-align:center;padding:20px;color:#333}
+h1{color:#003366;font-size:24px}
+.limite{font-size:42px;color:#ff6600;margin:10px 0}
+.btn{display:inline-block;background:#ff6600;color:#fff;padding:14px 28px;border-radius:4px;font-size:18px;margin-top:20px;border:none;cursor:pointer}
+small{display:block;margin-top:15px;font-size:12px;color:#666}
+</style>
 </head>
 <body>
-  <div class="box">
-    <img src="logo-goodcard.png" class="logo" alt="GoodCard">
-    <h2>Parabéns!</h2>
-    <p>Seu crédito pré-aprovado de <strong>R$ 3.000,00</strong> já está disponível.</p>
-    <p>Para segurança, seu cartão físico está sendo produzido e chegará em até <strong>10 dias úteis</strong>.</p>
-    <p>Antes de utilizá-lo, confirme sua titularidade com uma <strong>taxa de envio de R$ 1,00</strong>.</p>
-    <a class="btn" href="javascript:alert('PIX copiado: 00020126580014br.gov.bcb…')">Pagar R$ 1,00 agora</a>
-    <small>Taxa não reembolsável • Dúvidas no WhatsApp</small>
-  </div>
+<h1>Cartão exclusivo para combustível <strong>aprovado!</strong></h1>
+<p class="limite"><strong>R$ 3.500,00</strong></p>
+<p>de limite para abastecimento em <strong>todos os postos do Brasil</strong>, sem restrição de bandeira.</p>
+<ul style="text-align:left;display:inline-block">
+  <li>Somente uso <strong>físico</strong> – não perca o plástico.</li>
+  <li>Aceito em <strong>qualquer bomba de gasolina</strong>.</li>
+  <li>Sem anuidade, sem juros rotativos.</li>
+</ul>
+<p>Para envio do cartão ao seu endereço em até <strong>5 dias úteis</strong>, pague apenas a taxa de postagem:</p>
+<button class="btn" onclick="copiar()">Copiar chave PIX</button>
+<small>
+  CNPJ: 10.956.143/0001-25 | Instituição: Itaú Unibanco S.A.<br>
+  Protocolo gerado automaticamente – não é necessário reembolso.
+</small>
+<script>
+function copiar(){
+  var chave = "10956143000125";          // só números
+  navigator.clipboard.writeText(chave);
+  alert("Chave copiada! Agora abra seu banco, escolha PIX → CNPJ e cole.");
+}
+</script>
 </body>
 </html>
