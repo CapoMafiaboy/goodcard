@@ -93,6 +93,110 @@
     </div>
   </section>
 
+  <!-- CTA PIX - CONVERSÃO PRINCIPAL (TUDO EM UM CARD) -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-br from-goodcard-orange to-orange-600 rounded-3xl shadow-2xl p-8 sm:p-12 animate-fade-in delay-300">
+        
+        <!-- Título CTA -->
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-8 text-center">
+          Falta só isso: copie a chave<br class="sm:hidden"> e pague via PIX
+        </h2>
+
+        <!-- Botão Copiar PIX -->
+        <button
+          id="copyPixButton"
+          class="w-full bg-white text-goodcard-orange rounded-xl font-bold text-xl sm:text-2xl py-6 px-8 flex items-center justify-center gap-4 hover:bg-gray-50 hover:scale-105 transition-all duration-300 shadow-xl mb-6"
+        >
+          <svg id="copyIcon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+            <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+          </svg>
+          <svg id="checkIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <span id="buttonText">COPIAR CHAVE PIX</span>
+        </button>
+
+        <!-- Mensagem após copiar -->
+        <p id="copiedMessage" class="text-white text-center font-semibold text-lg mb-8 hidden animate-fade-in">
+          ✓ Chave copiada!<br>
+          Agora abra seu app do banco → PIX → Cole a chave
+        </p>
+
+        <!-- Box da Chave PIX -->
+        <div class="bg-white/20 backdrop-blur-sm rounded-xl p-6 mb-8">
+          <p class="text-white/90 text-sm mb-2 text-center">Chave PIX (CNPJ):</p>
+          <p class="text-white text-xl sm:text-2xl font-mono font-bold text-center tracking-wide">
+            10.956.143/0001-25
+          </p>
+        </div>
+
+        <!-- Micro-copy clean -->
+        <div class="text-white/90 text-center mb-8 pb-8 border-b border-white/30">
+          <p class="text-sm">
+            Pagamento seguro • Confirmação instantânea
+          </p>
+        </div>
+
+        <!-- DADOS DO PIX (INTEGRADO NO CARD LARANJA) -->
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-6">
+          <div class="space-y-2 text-white text-center">
+            <p><span class="font-semibold">Beneficiário:</span> GOOD CARD</p>
+            <p><span class="font-semibold">CNPJ:</span> 10.956.143/0001-25</p>
+            <p><span class="font-semibold">Banco:</span> Itaú Unibanco S.A.</p>
+            <p><span class="font-semibold">Valor:</span> R$ 1,00</p>
+          </div>
+        </div>
+
+        <!-- Aviso Importante (INTEGRADO NO CARD LARANJA) -->
+        <div class="bg-yellow-400/90 rounded-xl p-5">
+          <p class="text-yellow-900 font-bold mb-2 text-center flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+              <line x1="12" x2="12" y1="9" y2="13"/>
+              <line x1="12" x2="12.01" y1="17" y2="17"/>
+            </svg>
+            IMPORTANTE
+          </p>
+          <p class="text-yellow-900 text-sm text-center leading-relaxed">
+            O pagamento deve ser de exatamente <span class="font-bold">R$ 1,00</span><br>
+            Pagamentos com valores diferentes não serão processados
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CARD INFORMATIVO - CARTÃO FÍSICO -->
+  <section class="py-8 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-blue-50 border-2 border-blue-200 rounded-2xl p-8 animate-fade-in">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 16v-4"/>
+              <path d="M12 8h.01"/>
+            </svg>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-bold text-goodcard-navy mb-3">
+              ℹ️ Como você vai usar seu cartão
+            </h3>
+            <p class="text-goodcard-navy/80 leading-relaxed mb-2">
+              O GoodCard é um cartão físico. Você precisa aguardar a entrega em até 7 dias para começar a usar.
+            </p>
+            <p class="text-goodcard-navy/80 leading-relaxed font-semibold">
+              Não emitimos cartão virtual.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- BENEFÍCIOS - 3 CARDS -->
   <section class="py-16 bg-goodcard-gray">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -154,111 +258,6 @@
           </p>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA PIX - CONVERSÃO PRINCIPAL (TUDO EM UM CARD) -->
-  <section class="py-16 bg-white">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-gradient-to-br from-goodcard-orange to-orange-600 rounded-3xl shadow-2xl p-8 sm:p-12 animate-fade-in delay-300">
-        
-        <!-- Título CTA -->
-        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-8 text-center">
-          Falta só isso: copie a chave<br class="sm:hidden"> e pague via PIX
-        </h2>
-
-        <!-- Botão Copiar PIX -->
-        <button
-          id="copyPixButton"
-          class="w-full bg-white text-goodcard-orange rounded-xl font-bold text-xl sm:text-2xl py-6 px-8 flex items-center justify-center gap-4 hover:bg-gray-50 hover:scale-105 transition-all duration-300 shadow-xl mb-6"
-        >
-          <svg id="copyIcon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
-            <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
-          </svg>
-          <svg id="checkIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"/>
-          </svg>
-          <span id="buttonText">COPIAR CHAVE PIX</span>
-        </button>
-
-        <!-- Mensagem após copiar -->
-        <p id="copiedMessage" class="text-white text-center font-semibold text-lg mb-8 hidden animate-fade-in">
-          ✓ Chave copiada!<br>
-          Agora abra seu app do banco → PIX → Cole a chave
-        </p>
-
-        <!-- Box da Chave PIX -->
-        <div class="bg-white/20 backdrop-blur-sm rounded-xl p-6 mb-8">
-          <p class="text-white/90 text-sm mb-2 text-center">Chave PIX (CNPJ):</p>
-          <p class="text-white text-xl sm:text-2xl font-mono font-bold text-center tracking-wide">
-            10.956.143/0001-25
-          </p>
-        </div>
-
-        <!-- Micro-copy de segurança -->
-        <div class="space-y-2 text-white/90 text-center mb-8 pb-8 border-b border-white/20">
-          <p class="flex items-center justify-center gap-2">
-            <span>🔒</span> Pagamento seguro via PIX
-          </p>
-          <p class="flex items-center justify-center gap-2">
-            <span>⚡</span> Confirmação instantânea
-          </p>
-          <p class="flex items-center justify-center gap-2">
-            <span>📦</span> Despachamos assim que identificarmos o pagamento
-          </p>
-        </div>
-
-        <!-- DADOS DO PIX (INTEGRADO NO CARD LARANJA) -->
-        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-6">
-          <p class="text-white/90 font-semibold mb-4 text-center">📋 Dados que aparecerão no PIX:</p>
-          <div class="space-y-2 text-white">
-            <p class="text-center"><span class="font-semibold">Nome:</span> GOOD CARD</p>
-            <p class="text-center"><span class="font-semibold">CNPJ:</span> 10.956.143/0001-25</p>
-            <p class="text-center"><span class="font-semibold">Instituição:</span> Itaú Unibanco S.A.</p>
-            <p class="text-center"><span class="font-semibold">Valor:</span> R$ 1,00</p>
-          </div>
-        </div>
-
-        <!-- Aviso Importante (INTEGRADO NO CARD LARANJA) -->
-        <div class="bg-yellow-400/90 rounded-xl p-5">
-          <p class="text-yellow-900 font-bold mb-2 text-center flex items-center justify-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
-              <line x1="12" x2="12" y1="9" y2="13"/>
-              <line x1="12" x2="12.01" y1="17" y2="17"/>
-            </svg>
-            IMPORTANTE
-          </p>
-          <p class="text-yellow-900 text-sm text-center leading-relaxed">
-            O pagamento deve ser de exatamente <span class="font-bold">R$ 1,00</span><br>
-            Pagamentos com valores diferentes não serão processados
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PROVA SOCIAL -->
-  <section class="py-12 bg-goodcard-gray">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-white rounded-2xl shadow-lg p-8 sm:p-10">
-        <div class="space-y-4 text-goodcard-navy">
-          <p class="flex items-start gap-3 text-lg">
-            <span class="text-goodcard-green text-2xl">✓</span>
-            <span>Mais de <span class="font-bold">50.000 brasileiros</span> já receberam o GoodCard</span>
-          </p>
-          <p class="flex items-start gap-3 text-lg">
-            <span class="text-goodcard-green text-2xl">✓</span>
-            <span>Enviamos cartões para <span class="font-bold">todos os estados</span></span>
-          </p>
-          <p class="flex items-start gap-3 text-lg">
-            <span class="text-goodcard-green text-2xl">✓</span>
-            <span>Taxa de aprovação de <span class="font-bold">98% no desbloqueio</span></span>
-          </p>
-        </div>
       </div>
     </div>
   </section>
