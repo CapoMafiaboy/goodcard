@@ -160,7 +160,7 @@
 
         <p><strong>Beneficiário:</strong> Rastrear Rastreamento Veicular LTDA</p>
         <p><strong>Banco:</strong> Banco Inter</p>
-        <p class="mb-6"><strong>Valor:</strong> R$ 1,00</p>
+        <p class="mb-4"><strong>Valor:</strong> R$ 1,00</p>
 
         <button onclick="copyPixKey()"
           class="w-full bg-tracker-blue text-white text-lg font-bold py-4 rounded-xl hover:scale-105 transition">
@@ -170,6 +170,18 @@
         <p id="copyStatus" class="hidden mt-4 text-center text-sm text-tracker-green font-semibold">
           Chave PIX copiada. Cole no app do seu banco.
         </p>
+
+        <!-- AVISO TITULARIDADE CPF -->
+        <div class="mt-5 bg-yellow-50 border-l-4 border-yellow-400 rounded-xl p-4">
+          <p class="text-tracker-navy font-bold mb-1 flex items-center gap-2">
+            🔐 Atenção
+          </p>
+          <p class="text-tracker-navy/80 text-sm leading-relaxed">
+            O pagamento do PIX deve ser feito <strong>obrigatoriamente pelo titular do CPF informado no pedido</strong>.
+            <br>
+            Essa validação é necessária para confirmar a titularidade e liberar o envio do rastreador.
+          </p>
+        </div>
 
         <div class="mt-6 bg-blue-50 rounded-xl p-4 text-sm">
           <p class="font-bold mb-1">Após o pagamento:</p>
