@@ -3,20 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GoodCard - Parabéns! Você foi aprovado</title>
+  <title>Rastreador Veicular sem Mensalidade</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
+
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            'goodcard-orange': '#FF6B35',
-            'goodcard-navy': '#1A2B4C',
-            'goodcard-gray': '#F5F7FA',
-            'goodcard-green': '#10B981'
+            'tracker-blue': '#2563EB',
+            'tracker-navy': '#1E3A8A',
+            'tracker-gray': '#F5F7FA',
+            'tracker-green': '#10B981'
           },
           fontFamily: {
             'sans': ['Inter', 'system-ui', 'sans-serif']
@@ -25,354 +28,188 @@
       }
     }
   </script>
+
   <style>
-    * {
-      font-family: 'Inter', system-ui, sans-serif;
+    * { font-family: 'Inter', system-ui, sans-serif; }
+
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-    
-    @keyframes fade-in-up {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    @keyframes scale-in {
-      from {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-    
-    @keyframes glow {
-      0%, 100% {
-        box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
-      }
-      50% {
-        box-shadow: 0 0 40px rgba(255, 107, 53, 0.5);
-      }
-    }
-    
-    .animate-float {
-      animation: float 3s ease-in-out infinite;
-    }
-    
-    .animate-fade-in-up {
-      animation: fade-in-up 0.8s ease-out forwards;
-    }
-    
-    .animate-scale-in {
-      animation: scale-in 0.6s ease-out forwards;
-    }
-    
-    .animate-glow {
-      animation: glow 2s ease-in-out infinite;
-    }
-    
-    .delay-100 { animation-delay: 0.1s; opacity: 0; }
-    .delay-200 { animation-delay: 0.2s; opacity: 0; }
-    .delay-300 { animation-delay: 0.3s; opacity: 0; }
-    .delay-400 { animation-delay: 0.4s; opacity: 0; }
-    
-    .glass {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .gradient-mesh {
-      background: 
-        radial-gradient(at 0% 0%, rgba(255, 107, 53, 0.1) 0px, transparent 50%),
-        radial-gradient(at 100% 0%, rgba(26, 43, 76, 0.05) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(255, 107, 53, 0.08) 0px, transparent 50%);
+
+    .animate-fade-in {
+      animation: fade-in 0.8s ease-out forwards;
     }
   </style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-slate-50 via-white to-orange-50">
 
-  <!-- HEADER -->
-  <header class="bg-white/80 backdrop-blur-md shadow-sm py-8 sticky top-0 z-50 border-b border-gray-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-5xl sm:text-6xl font-extrabold bg-gradient-to-r from-goodcard-orange via-orange-500 to-goodcard-orange bg-clip-text text-transparent text-center tracking-tight">
-        GoodCard
-      </h1>
-    </div>
-  </header>
+<body class="min-h-screen bg-white">
 
-  <!-- HERO - APROVAÇÃO -->
-  <section class="py-20 gradient-mesh relative overflow-hidden">
-    <!-- Decorative circles -->
-    <div class="absolute top-20 left-10 w-72 h-72 bg-goodcard-orange/5 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-20 right-10 w-96 h-96 bg-goodcard-navy/5 rounded-full blur-3xl"></div>
-    
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="text-center">
-        <!-- Ícone de Check -->
-        <div class="flex justify-center mb-10 animate-scale-in">
-          <div class="bg-gradient-to-br from-goodcard-green to-emerald-500 rounded-full p-8 shadow-2xl shadow-green-500/20 animate-float">
-            <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-              <polyline points="22 4 12 14.01 9 11.01"></polyline>
-            </svg>
-          </div>
-        </div>
-        
-        <!-- Título Principal -->
-        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-goodcard-navy mb-8 leading-tight tracking-tight animate-fade-in-up delay-100">
-          Parabéns! Seu cartão<br>GoodCard foi aprovado
-        </h2>
-        
-        <!-- Subtítulo com FOMO -->
-        <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 max-w-2xl mx-auto border border-orange-100 animate-fade-in-up delay-200">
-          <p class="text-xl sm:text-2xl text-goodcard-navy/90 leading-relaxed">
-            Seu limite de <span class="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-goodcard-orange to-orange-600">R$ 3.500</span> está reservado. Pague <span class="font-bold text-goodcard-orange">R$ 1,00</span> agora e garanta o despache do seu cartão <span class="font-bold text-goodcard-orange">hoje mesmo</span> para sua residência.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- HEADER -->
+<header class="bg-white shadow-sm py-6">
+  <div class="max-w-7xl mx-auto px-4">
+    <h1 class="text-3xl font-bold text-tracker-blue text-center">🚗 TrackSafe</h1>
+  </div>
+</header>
 
-  <!-- CTA PIX - CONVERSÃO PRINCIPAL -->
-  <section class="py-20 bg-white relative">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-gradient-to-br from-goodcard-orange via-orange-500 to-orange-600 rounded-3xl shadow-2xl p-10 sm:p-14 animate-fade-in-up delay-300 relative overflow-hidden">
-        
-        <!-- Decorative gradient overlay -->
-        <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none"></div>
-        
-        <div class="relative z-10">
-          <!-- Título CTA -->
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-10 text-center leading-tight">
-            Falta só isso: copie a chave<br class="sm:hidden"> e pague via PIX
-          </h2>
+<!-- HERO -->
+<section class="py-16 bg-gradient-to-br from-blue-50 to-white">
+  <div class="max-w-4xl mx-auto px-4 text-center animate-fade-in">
 
-          <!-- Botão Copiar PIX -->
-          <button
-            id="copyPixButton"
-            class="w-full bg-white text-goodcard-orange rounded-2xl font-bold text-xl sm:text-2xl py-7 px-8 flex items-center justify-center gap-4 hover:bg-gray-50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-2xl shadow-black/20 mb-8 group"
-          >
-            <svg id="copyIcon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:scale-110 transition-transform">
-              <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
-              <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
-            </svg>
-            <svg id="checkIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="20 6 9 17 4 12"/>
-            </svg>
-            <span id="buttonText">COPIAR CHAVE PIX</span>
-          </button>
+    <h2 class="text-4xl sm:text-5xl font-extrabold text-tracker-navy mb-6">
+      Rastreador veicular<br>sem mensalidade
+    </h2>
 
-          <!-- Mensagem após copiar -->
-          <p id="copiedMessage" class="text-white text-center font-semibold text-lg mb-10 hidden animate-fade-in-up">
-            ✓ Chave copiada!<br>
-            Agora abra seu app do banco → PIX → Cole a chave
-          </p>
+    <p class="text-2xl text-tracker-navy/80 mb-8 font-semibold">
+      Acompanhe seu carro em tempo real pelo celular Android.<br>
+      Sem contrato. Sem fidelidade.
+    </p>
 
-          <!-- Box da Chave PIX -->
-          <div class="glass rounded-2xl p-7 mb-10 border-2 border-white/30">
-            <p class="text-white/80 text-sm mb-3 text-center font-medium">Chave PIX (CNPJ):</p>
-            <p class="text-white text-xl sm:text-2xl font-mono font-bold text-center tracking-wide">
-              10.956.143/0001-25
-            </p>
-          </div>
-
-          <!-- Micro-copy clean -->
-          <div class="text-white text-center mb-10 pb-10 border-b border-white/20">
-            <p class="text-base font-bold">
-              Pagamento seguro • Confirmação instantânea
-            </p>
-          </div>
-
-          <!-- DADOS DO PIX -->
-          <div class="glass rounded-2xl p-7 mb-8 border-2 border-white/30">
-            <div class="space-y-3 text-white text-center">
-              <p class="text-base font-bold"><span class="font-extrabold">Beneficiário:</span> GOOD CARD</p>
-              <p class="text-base font-bold"><span class="font-extrabold">CNPJ:</span> 10.956.143/0001-25</p>
-              <p class="text-base font-bold"><span class="font-extrabold">Banco:</span> Itaú Unibanco S.A.</p>
-              <p class="text-base font-bold"><span class="font-extrabold">Valor:</span> R$ 1,00</p>
-            </div>
-          </div>
-
-          <!-- Aviso Importante -->
-          <div class="bg-yellow-400 rounded-2xl p-6 shadow-lg">
-            <p class="text-yellow-900 font-bold mb-2 text-center flex items-center justify-center gap-2 text-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
-                <line x1="12" x2="12" y1="9" y2="13"/>
-                <line x1="12" x2="12.01" y1="17" y2="17"/>
-              </svg>
-              IMPORTANTE
-            </p>
-            <p class="text-yellow-900 text-sm text-center leading-relaxed">
-              O pagamento deve ser de exatamente <span class="font-bold">R$ 1,00</span><br>
-              Pagamentos com valores diferentes não serão processados
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CARD INFORMATIVO - CARTÃO FÍSICO -->
-  <section class="py-6 bg-gradient-to-b from-white to-goodcard-gray">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200/50 rounded-2xl p-8 shadow-lg animate-fade-in-up delay-400">
-        <div class="flex items-start gap-4">
-          <div class="flex-shrink-0">
-            <div class="bg-blue-500 rounded-full p-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 16v-4"/>
-                <path d="M12 8h.01"/>
-              </svg>
-            </div>
-          </div>
-          <div class="flex-1">
-            <h3 class="text-xl font-bold text-goodcard-navy mb-3">
-              ℹ️ Como você vai usar seu cartão
-            </h3>
-            <p class="text-goodcard-navy/80 leading-relaxed mb-2">
-              O GoodCard é um cartão físico. Você precisa aguardar a entrega em até 7 dias para começar a usar.
-            </p>
-            <p class="text-goodcard-navy/80 leading-relaxed font-semibold">
-              Não emitimos cartão virtual.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BENEFÍCIOS - 3 CARDS -->
-  <section class="py-12 bg-goodcard-gray">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
-        <!-- Card 1 - Cartão Físico -->
-        <div class="bg-white rounded-3xl shadow-xl p-10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100 animate-fade-in-up delay-100 group">
-          <div class="flex justify-center mb-8">
-            <div class="bg-gradient-to-br from-goodcard-green/10 to-emerald-50 rounded-2xl p-6 group-hover:scale-110 transition-transform duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-goodcard-green">
-                <rect width="20" height="14" x="2" y="5" rx="2"/>
-                <line x1="2" x2="22" y1="10" y2="10"/>
-              </svg>
-            </div>
-          </div>
-          <h3 class="text-2xl font-bold text-goodcard-navy mb-4 text-center">
-            Cartão Físico
-          </h3>
-          <p class="text-goodcard-navy/70 text-center leading-relaxed">
-            Aceito em qualquer posto do país, sem restrições
-          </p>
-        </div>
-
-        <!-- Card 2 - Sem Anuidade -->
-        <div class="bg-white rounded-3xl shadow-xl p-10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100 animate-fade-in-up delay-200 group">
-          <div class="flex justify-center mb-8">
-            <div class="bg-gradient-to-br from-goodcard-green/10 to-emerald-50 rounded-2xl p-6 group-hover:scale-110 transition-transform duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-goodcard-green">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="m4.9 4.9 14.2 14.2"/>
-              </svg>
-            </div>
-          </div>
-          <h3 class="text-2xl font-bold text-goodcard-navy mb-4 text-center">
-            Zero Anuidade
-          </h3>
-          <p class="text-goodcard-navy/70 text-center leading-relaxed">
-            Nenhuma tarifa anual. Você só paga o que gastar
-          </p>
-        </div>
-
-        <!-- Card 3 - Vencimento -->
-        <div class="bg-white rounded-3xl shadow-xl p-10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-gray-100 animate-fade-in-up delay-300 group">
-          <div class="flex justify-center mb-8">
-            <div class="bg-gradient-to-br from-goodcard-green/10 to-emerald-50 rounded-2xl p-6 group-hover:scale-110 transition-transform duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-goodcard-green">
-                <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
-                <line x1="16" x2="16" y1="2" y2="6"/>
-                <line x1="8" x2="8" y1="2" y2="6"/>
-                <line x1="3" x2="21" y1="10" y2="10"/>
-              </svg>
-            </div>
-          </div>
-          <h3 class="text-2xl font-bold text-goodcard-navy mb-4 text-center">
-            Você Escolhe o Vencimento
-          </h3>
-          <p class="text-goodcard-navy/70 text-center leading-relaxed">
-            Defina a melhor data após ativar o cartão
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- RODAPÉ -->
-  <footer class="py-10 bg-gradient-to-br from-goodcard-navy to-slate-900 relative overflow-hidden">
-    <div class="absolute inset-0 bg-grid-white/[0.02] pointer-events-none"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <p class="text-center text-white/60 text-sm font-medium">
-        GoodCard © 2026 - CNPJ: 10.956.143/0001-25
+    <div class="bg-white/80 rounded-2xl shadow-xl p-8 mb-10">
+      <p class="text-lg text-tracker-navy/90">
+        É um <strong>rastreador físico, real</strong>, que você instala no veículo e acompanha direto pelo celular.
+        Veja onde seu carro está em tempo real, receba alertas de segurança e tenha mais tranquilidade —
+        <span class="font-bold text-tracker-blue">sem pagar mensalidade</span>.
       </p>
     </div>
-  </footer>
 
-  <script>
-    document.getElementById('copyPixButton').addEventListener('click', function() {
-      const pixKey = '10956143000125';
-      const button = this;
-      const buttonText = document.getElementById('buttonText');
-      const copyIcon = document.getElementById('copyIcon');
-      const checkIcon = document.getElementById('checkIcon');
-      const copiedMessage = document.getElementById('copiedMessage');
-      
-      navigator.clipboard.writeText(pixKey).then(function() {
-        // Mudar visual do botão
-        button.classList.remove('bg-white', 'text-goodcard-orange');
-        button.classList.add('bg-goodcard-green', 'text-white');
-        
-        // Trocar ícone
-        copyIcon.classList.add('hidden');
-        checkIcon.classList.remove('hidden');
-        
-        // Mudar texto
-        buttonText.textContent = 'Chave Copiada!';
-        
-        // Mostrar mensagem
-        copiedMessage.classList.remove('hidden');
-        
-        // Voltar ao normal após 4 segundos
-        setTimeout(function() {
-          button.classList.remove('bg-goodcard-green', 'text-white');
-          button.classList.add('bg-white', 'text-goodcard-orange');
-          copyIcon.classList.remove('hidden');
-          checkIcon.classList.add('hidden');
-          buttonText.textContent = 'COPIAR CHAVE PIX';
-          copiedMessage.classList.add('hidden');
-        }, 4000);
-      }).catch(function(err) {
-        console.error('Erro ao copiar:', err);
-        alert('Não foi possível copiar. Por favor, copie manualmente: 10956143000125');
-      });
+    <a href="#pagamento"
+       class="inline-block bg-gradient-to-r from-tracker-blue to-blue-600 text-white text-2xl font-bold py-6 px-12 rounded-2xl shadow-2xl hover:scale-105 transition">
+      Testar por apenas R$ 1,00
+    </a>
+
+    <p class="text-tracker-navy/70 text-sm mt-4">
+      ✓ Demonstração de 30 dias • Produto físico • Sem risco
+    </p>
+
+  </div>
+</section>
+
+<!-- BENEFÍCIOS -->
+<section class="py-16 bg-tracker-gray">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <h3 class="text-3xl font-bold text-tracker-navy text-center mb-12">
+      O que você recebe
+    </h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
+        <h4 class="font-bold text-xl mb-2">Localização em tempo real</h4>
+        <p class="text-tracker-navy/70">Veja onde seu veículo está a qualquer momento</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
+        <h4 class="font-bold text-xl mb-2">Alertas de segurança</h4>
+        <p class="text-tracker-navy/70">Movimento suspeito e saída de área</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
+        <h4 class="font-bold text-xl mb-2">Histórico de trajetos</h4>
+        <p class="text-tracker-navy/70">Consulte os caminhos percorridos</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
+        <h4 class="font-bold text-xl mb-2">Compatível com Android</h4>
+        <p class="text-tracker-navy/70">Funciona em qualquer celular Android</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
+        <h4 class="font-bold text-xl mb-2">Instalação discreta</h4>
+        <p class="text-tracker-navy/70">Pequeno, oculto e fácil de instalar</p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
+        <h4 class="font-bold text-xl mb-2 text-tracker-green">Sem mensalidade</h4>
+        <p class="text-tracker-navy/70">Pagamento único, sem taxas recorrentes</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PAGAMENTO PIX -->
+<section id="pagamento" class="py-20 bg-white">
+  <div class="max-w-3xl mx-auto px-4">
+
+    <div class="bg-gradient-to-br from-tracker-blue to-blue-600 rounded-3xl shadow-2xl p-10 text-white text-center">
+
+      <h2 class="text-3xl font-extrabold mb-4">
+        🔐 Ative sua demonstração por R$ 1,00
+      </h2>
+
+      <p class="text-lg mb-8 text-white/90">
+        Para liberar o envio do rastreador com a <strong>demonstração de 30 dias</strong>,
+        é necessária uma <strong>taxa simbólica de R$ 1,00</strong>.
+        <br><br>
+        Essa etapa confirma a <strong>titularidade e autenticidade do pedido</strong>.
+        <br>
+        <strong>O produto é despachado após a confirmação do pagamento.</strong>
+      </p>
+
+      <!-- CARD PIX -->
+      <div class="bg-white text-tracker-navy rounded-2xl p-8 shadow-xl text-left max-w-2xl mx-auto">
+
+        <p class="font-bold text-lg mb-2">Chave PIX (CNPJ)</p>
+        <p class="text-sm text-gray-600 mb-3">Copie e cole no aplicativo do seu banco</p>
+
+        <div class="bg-gray-100 rounded-xl px-4 py-3 font-mono text-lg mb-4">
+          46.657.702/0001-43
+        </div>
+
+        <p><strong>Beneficiário:</strong> Rastrear Rastreamento Veicular LTDA</p>
+        <p><strong>Banco:</strong> Banco Inter</p>
+        <p class="mb-6"><strong>Valor:</strong> R$ 1,00</p>
+
+        <button onclick="copyPixKey()"
+          class="w-full bg-tracker-blue text-white text-lg font-bold py-4 rounded-xl hover:scale-105 transition">
+          Copiar chave PIX
+        </button>
+
+        <p id="copyStatus" class="hidden mt-4 text-center text-sm text-tracker-green font-semibold">
+          Chave PIX copiada. Cole no app do seu banco.
+        </p>
+
+        <div class="mt-6 bg-blue-50 rounded-xl p-4 text-sm">
+          <p class="font-bold mb-1">Após o pagamento:</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Confirmamos o PIX</li>
+            <li>Reservamos o rastreador</li>
+            <li>Despachamos para o seu endereço</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <p class="mt-8 text-white/90">
+        Após o teste:
+        <br>✔️ Gostou? Pagamento único de <strong>R$ 250,00</strong>
+        <br>❌ Não gostou? Devolução gratuita
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-8 bg-tracker-navy">
+  <p class="text-center text-white/80 text-sm">
+    TrackSafe © 2026 — Rastrear Rastreamento Veicular LTDA • CNPJ 46.657.702/0001-43
+  </p>
+</footer>
+
+<!-- SCRIPT PIX -->
+<script>
+  function copyPixKey() {
+    const pixKey = "46.657.702/0001-43";
+    navigator.clipboard.writeText(pixKey).then(() => {
+      const el = document.getElementById("copyStatus");
+      el.classList.remove("hidden");
+      setTimeout(() => el.classList.add("hidden"), 3000);
     });
-  </script>
+  }
+</script>
 
 </body>
 </html>
